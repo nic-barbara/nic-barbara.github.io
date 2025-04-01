@@ -36,12 +36,38 @@
               font-weight: 300;
               font-size: 2rem;
           }
+          h2 {
+              font-weight: 350;
+              font-size: 1.5rem;
+          }
           #header {
-            background-color: #f4f4f4;
+            position: relative;
+            background-image: url('imgs/scg_play.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             display: flex;
             align-items: flex-end;
-            padding-top:60px;
-            padding-bottom:60px;
+            padding-top: 60px;
+            padding-bottom: 60px;
+          }
+        
+          /* White semi-transparent overlay */
+          #header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(116, 120, 132, 0.8);
+            z-index: 1;
+          }
+
+          /* Ensure content stays on top */
+          #header * {
+            position: relative;
+            z-index: 2;
           }
           #footer {
             background-color: #FFFFFF;
@@ -59,18 +85,22 @@
           }
           #header-text-name {
             font-size: 40px;
+            color: #ffffff;
           }
           #header-text-title {
               font-size: 17px;
-          }
+              color: #ffffff;
+            }
           #header-text-affiliation {
               font-size: 17px;
               margin-top: 10px;
-          }
+              color: #ffffff;
+            }
           #header-text-email {
             margin-top: 10px;
             font-size: 17px;
             font-style: italic;
+            color: #ffffff;
           }
           .header-text-desc {
             font-size: 20px;
@@ -129,18 +159,19 @@
                         Australian Centre for Robotics | 
                         University of Sydney
                     </div>
-                  <!-- <div id='header-text-email'>
-                    <a href="mailto:nicholas.barbara@sydney.edu.au">nicholas.barbara@sydney.edu.au</a>
-                  </div> -->
                   <br>
                   <div>
-                    <p align="justify">
-                    I'm an engineer and researcher with a passion for solving challenging problems and understanding how the world works. My current research involves developing new techniques in robust reinforcement learning for application in real-world robotic systems. My key interests include optimal and learning-based control, spacecraft mission design and GNC, astronomy, and a little bit of cricket and jazz.
+                    <p align="justify" style="color:white">
+                        Engineer and researcher with a passion for solving challenging problems and understanding how the world works. I’m currently completing my PhD at the Australian Centre for Robotics (ACFR), where my research involves developing new robust machine learning tools for applications such as learning-based robotic control. 
                     </p>
                     <br>
-                    <p align="justify">
-                    This page is a bit of a work-in-progress. In the mean time, please check out the links below and feel free to reach out via email at
-                    <a href="mailto:nicholas.barbara@sydney.edu.au">nicholas.barbara@sydney.edu.au.</a>
+                    <p align="justify" style="color:white">
+                        I'm most interested in working at the intersection of science and engineering. At the moment, my focus is on control theory, reinforcement learning, neural networks, and robotics. I also dabble in astronomy and space engineering. In my spare time, I love a little bit of cricket and jazz.
+                    </p>
+                    <br>
+                    <p align="justify" style="color:white">
+                        To get in touch, please feel free to reach out via email at
+                        <a href="mailto:nicholas.barbara@sydney.edu.au" style="color: #ebfdb0;">nicholas.barbara@sydney.edu.au</a>.
                     </p>
                   </div>
                   <br>
@@ -185,12 +216,27 @@
         <div class='row vspace-top'>
             <div class='col offset-sm-1'>
 
+                <div class='vspace-top'>
+                    <h1>Background</h1>
+                </div>
+
+                <div class='row vspace-top-news'>
+                    <div class="col">
+
+                        I received a Bachelor of Engineering (Hons 1, University Medal) & Bachelor of Science (Advanced) from the University of Sydney in 2021. My majors were in Space Engineering, Physics, and Mathematics.
+
+                        I completed my honours thesis in vibration control as a visiting researcher at <a href="https://www.nearmap.com/au?utm_source=google&utm_medium=organic">Nearmap</a>, and had previously interned at <a href="https://www.saberastro.com/">Saber Astronautics</a> and <a href="https://www.isae-supaero.fr/en/">ISAE-SUPAERO</a>.
+
+                        Before that, I was a student researcher at the Sydney Institute for Astronomy (<a href="https://sifa.sydney.edu.au/">SIfA</a>) where I developed a data-driven classification algorithm for <a href="https://sifa.sydney.edu.au/asteroseismology/">asteroseismology</a>.
+                    </div>
+                </div>
+
                 <!-- <div class='vspace-top'>
                     <h1>News</h1>
                 </div>
 
                 <div class='row vspace-top-news'>
-                    <div class="col-sm-3 news-date">
+                    <div class="col-sm-2 news-date">
                         Feb 2024
                     </div>
                     <div class="col">
@@ -198,8 +244,90 @@
                     </div>
                 </div> -->
 
+                <!-- RESEARCH PORTFOLIO -->
                 <div class='vspace-top'>
-                    <h1>Select Publications</h1>
+                    <h1>Research Portfolio</h1>
+                </div>
+
+                <!-- Robust Machine Learning -->
+                <div class='vspace-top'>
+                    <h2>Robust Machine Learning & Control Theory</h2>
+                </div>
+
+                <div class='row vspace-top'>
+                    <div class="col-sm-3">
+                        <img src="imgs/yoularen.gif" class='img-fluid'>
+                    </div>
+                    <div class="col">
+                        <div class='paper-title'>
+                            React to Surprises: Stable-by-Design Neural Feedback Control and the Youla-REN
+                        </div>
+                        <div class='paper-desc'>
+                            Coming soon...
+                        </div>
+                        <div class='paper-authors'>
+                            <b>Nicholas H. Barbara</b>, Ruigang Wang, Ian R. Manchester
+                        </div>
+                        <br>
+                        <!-- <div>
+                            <span class="link-block">
+                                <a href=""
+                                class="external-link button is-normal">
+                                <span class="icon">
+                                    <i class="ai ai-arxiv"></i>
+                                </span>
+                                <span>arXiv</span>
+                                </a>
+                            </span>
+                            <span class="link-block">
+                                <a href="https://github.com/nic-barbara/ReactToSurprises"
+                                class="external-link button is-normal">
+                                <span class="icon">
+                                    <i class="fab fa-github"></i> 
+                                </span>
+                                <span>Code</span>
+                                </a>
+                            </span>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class='row vspace-top'>
+                    <div class="col-sm-3">
+                        <img src="imgs/r2dn.png" width="250">
+                    </div>
+                    <div class="col">
+                        <div class='paper-title'>
+                            R2DN: Scalable Parameterization of Contracting and Lipschitz Recurrent Deep Networks
+                        </div>
+                        <div class='paper-desc'>
+                            Coming soon...
+                        </div>
+                        <div class='paper-authors'>
+                            <b>Nicholas H. Barbara</b>, Ruigang Wang, Ian R. Manchester
+                        </div>
+                        <br>
+                        <!-- <div>
+                            <span class="link-block">
+                                <a href=""
+                                class="external-link button is-normal">
+                                <span class="icon">
+                                    <i class="ai ai-arxiv"></i>
+                                </span>
+                                <span>arXiv</span>
+                                </a>
+                            </span>
+                            <span class="link-block">
+                                <a href="https://github.com/nic-barbara/R2DN"
+                                class="external-link button is-normal">
+                                <span class="icon">
+                                    <i class="fab fa-github"></i> 
+                                </span>
+                                <span>Code</span>
+                                </a>
+                            </span>
+                        </div> -->
+                    </div>
                 </div>
 
                 <div class='row vspace-top'>
@@ -211,7 +339,7 @@
                             On Robust Reinforcement Learning with Lipschitz-Bounded Policy Networks
                         </div>
                         <div class='paper-desc'>
-                            Systems Theory in Data and Optimization: Proceedings of SysDO 2024
+                            Spotlight Talk at the Symposium on Systems Theory in Data and Optimization (SysDO 2024)
                         </div>
                         <div class='paper-authors'>
                             <b>Nicholas H. Barbara</b>, Ruigang Wang, Ian R. Manchester
@@ -289,44 +417,6 @@
 
                 <div class='row vspace-top'>
                     <div class="col-sm-3">
-                        <img src="imgs/robustneuralnetworks-logo.png" width="200">
-                    </div>
-                    <div class="col">
-                        <div class='paper-title'>
-                            RobustNeuralNetworks.jl: a Package for Machine Learning and Data-Driven Control with Certified Robustness
-                        </div>
-                        <div class='paper-desc'>
-                            Presented at JuliaCon 2023
-                        </div>
-                        <div class='paper-authors'>
-                            <b>Nicholas H. Barbara</b>, Max Revay, Ruigang Wang, Jing Cheng, Ian R. Manchester
-                        </div>
-                        <br>
-                        <div>
-                            <span class="link-block">
-                                <a href="https://arxiv.org/abs/2306.12612"
-                                class="external-link button is-normal">
-                                <span class="icon">
-                                    <i class="ai ai-arxiv"></i>
-                                </span>
-                                <span>arXiv</span>
-                                </a>
-                            </span>
-                            <span class="link-block">
-                                <a href="https://github.com/acfr/RobustNeuralNetworks.jl"
-                                class="external-link button is-normal">
-                                <span class="icon">
-                                    <i class="fab fa-github"></i> 
-                                </span>
-                                <span>Code</span>
-                                </a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class='row vspace-top'>
-                    <div class="col-sm-3">
                         <img src="imgs/lcss-figure.png">
                     </div>
                     <div class="col">
@@ -361,6 +451,11 @@
                             </span>
                         </div>
                     </div>
+                </div>
+
+                <!-- The good old days -->
+                <div class='vspace-top'>
+                    <h2>Asteroseismology</h2>
                 </div>
 
                 <div class='row vspace-top'>
@@ -403,6 +498,87 @@
 
                 <div class='row vspace-top'>
                     <div class="col-sm-3">
+                        <img src="imgs/simon-paper.png">
+                    </div>
+                    <div class="col">
+                        <div class='paper-title'>
+                            Finding binaries from phase modulation of pulsating stars with Kepler – VI. Orbits for 10 new binaries with mischaracterized primaries
+                        </div>
+                        <div class='paper-desc'>
+                            Monthly Notices of the Royal Astronomical Society (2020)
+                        </div>
+                        <div class='paper-authors'>
+                            Simon J. Murphy, <b>Nicholas H. Barbara</b>, Daniel Hey, Timothy R. Bedding, Ben D. Fulcher
+                        </div>
+                        <br>
+                        <div>
+                            <span class="link-block">
+                                <a href="https://doi.org/10.1093/mnras/staa562"
+                                class="external-link button is-normal">
+                                <span class="icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </span>
+                                <span>Paper</span>
+                              </a>
+                            </span>
+                            <span class="link-block">
+                                <a href="https://arxiv.org/abs/2003.02282"
+                                class="external-link button is-normal">
+                                <span class="icon">
+                                    <i class="ai ai-arxiv"></i>
+                                </span>
+                                <span>arXiv</span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='row vspace-top'>
+                    <div class="col-sm-3">
+                        <img src="imgs/gangli-paper.png">
+                    </div>
+                    <div class="col">
+                        <div class='paper-title'>
+                            Gravity-mode period spacings and near-core rotation rates of 611 γ Doradus stars with Kepler
+                        </div>
+                        <div class='paper-desc'>
+                            Monthly Notices of the Royal Astronomical Society (2019)
+                        </div>
+                        <div class='paper-authors'>
+                            Gang Li, Timothy Van Reeth, Timothy R Bedding, Simon J Murphy, Victoria Antoci, Rhita-Maria Ouazzani, <b>Nicholas H. Barbara</b>
+                        </div>
+                        <br>
+                        <div>
+                            <span class="link-block">
+                                <a href="https://doi.org/10.1093/mnras/stz2906"
+                                class="external-link button is-normal">
+                                <span class="icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </span>
+                                <span>Paper</span>
+                              </a>
+                            </span>
+                            <span class="link-block">
+                                <a href="https://arxiv.org/abs/1910.06634"
+                                class="external-link button is-normal">
+                                <span class="icon">
+                                    <i class="ai ai-arxiv"></i>
+                                </span>
+                                <span>arXiv</span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spacey stuff -->
+                <div class='vspace-top'>
+                    <h2>Space Systems Engineering</h2>
+                </div>
+
+                <div class='row vspace-top'>
+                    <div class="col-sm-3">
                         <img src="imgs/recycler.png">
                     </div>
                     <div class="col">
@@ -431,17 +607,118 @@
                     </div>
                 </div>
 
-                <div class='vspace-top'>
-                    <h1>Other Projects</h1>
+                <div class='row vspace-top'>
+                    <div class="col-sm-3">
+                        <img src="imgs/guardabasso.png">
+                    </div>
+                    <div class="col">
+                        <div class='paper-title'>
+                            The Recycler: an Innovative Approach to On-Orbit Servicing and Repurposing
+                        </div>
+                        <div class='paper-desc'>
+                            71st International Astronautical Congress (2020)
+                        </div>
+                        <div class='paper-authors'>
+                            Paolo Guardabasso, Michele Pio Savino, Calum Turner, Roberta Valeriani, Marie-Laure Vuyge, <b>Nicholas Barbara</b>, Stéphanie Lizy-Destrez
+                        </div>
+                        <br>
+                        <div>
+                            <span class="link-block">
+                                <a href="https://openscience.isae-supaero.fr/Default/doc/SYRACUSE/6501/the-recycler-an-innovative-approach-to-on-orbit-servicing-and-repurposing"
+                                class="external-link button is-normal">
+                                <span class="icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </span>
+                                <span>Paper</span>
+                              </a>
+                            </span>
+                            </span>
+                        </div>
+                    </div>
                 </div>
 
+                <!-- SOFTWARE -->
+                <div class='vspace-top'>
+                    <h2>Related Software Projects</h2>
+                </div>
+
+                <!-- RobustNeuralNetworks (JAX) -->
+                <div class='row vspace-top'>
+                    <div class="col-sm-3">
+                        <img src="imgs/Google_JAX_logo.png" class='img-fluid'>
+                    </div>
+                    <div class="col">
+                        <div class='paper-title'>
+                            RobustNeuralNetworks: JAX implementations of robust neural networks developed @ ACFR
+                        </div>
+                        <div class='paper-desc'>
+                            In preparation (2025)
+                        </div>
+                        <div class='paper-authors'>
+                            <b>Nicholas H. Barbara</b>, Ruigang Wang, Ian R. Manchester
+                        </div>
+                        <br>
+                        <div>
+                            <span class="link-block">
+                                <a href="https://github.com/nic-barbara/R2DN"
+                                class="external-link button is-normal">
+                                <span class="icon">
+                                    <i class="fab fa-github"></i> 
+                                </span>
+                                <span>Code</span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RobustNeuralNetworks.jl -->
+                <div class='row vspace-top'>
+                    <div class="col-sm-3">
+                        <img src="imgs/robustneuralnetworks-logo.png" width="200">
+                    </div>
+                    <div class="col">
+                        <div class='paper-title'>
+                            RobustNeuralNetworks.jl: a Package for Machine Learning and Data-Driven Control with Certified Robustness
+                        </div>
+                        <div class='paper-desc'>
+                            Proceedings of the JuliaCon Conferences (2025) | Presented at JuliaCon 2023
+                        </div>
+                        <div class='paper-authors'>
+                            <b>Nicholas H. Barbara</b>, Max Revay, Ruigang Wang, Jing Cheng, Ian R. Manchester
+                        </div>
+                        <br>
+                        <div>
+                            <span class="link-block">
+                                <a href="https://proceedings.juliacon.org/papers/10.21105/jcon.00163"
+                                class="external-link button is-normal">
+                                <span class="icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </span>
+                                <span>Paper</span>
+                                </a>
+                            </span>
+                            <span class="link-block">
+                                <a href="https://github.com/acfr/RobustNeuralNetworks.jl"
+                                class="external-link button is-normal">
+                                <span class="icon">
+                                    <i class="fab fa-github"></i> 
+                                </span>
+                                <span>Code</span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MuJoCo.jl -->
                 <div class='row vspace-top'>
                     <div class="col-sm-3">
                         <img src="imgs/humanoid_lqr.gif" class='img-fluid'>
                     </div>
                     <div class="col">
                         <div class='paper-title'>
-                            Julia Bindings and Visualiser for the MuJoCo Physics Engine
+                            MuJoCo.jl: Julia Bindings and Visualiser for the MuJoCo Physics Engine
                         </div>
                         <div class='paper-desc'>
                             Presented at JuliaCon 2024
