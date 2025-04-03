@@ -130,6 +130,7 @@
               left: 0;
               width: 100%; /* Ensures it spans the full width */
               z-index: 1000; /* Keeps it on top of other elements */
+              padding: 10px 20px; /* Add some padding to space out the items */
               color: white;
           }
           .navbar-item {
@@ -141,6 +142,9 @@
           }
           body {
               padding-top: 60px; /* Adjust based on the navbar height */
+          }
+          html {
+            scroll-padding-top: 70px; /* Adjust based on navbar height */
           }
     </style>
 </head>
@@ -241,12 +245,13 @@
 
                 <div class='row vspace-top-news'>
                     <div class="col">
-
+                        <p align="justify">
                         I received a Bachelor of Engineering (Hons 1, University Medal) & Bachelor of Science (Advanced) from the University of Sydney in 2021. My majors were in Space Engineering, Physics, and Mathematics.
 
                         I completed my honours thesis in vibration control as a visiting research student at <a href="https://www.nearmap.com/au?utm_source=google&utm_medium=organic">Nearmap</a>, and had previously interned at <a href="https://www.saberastro.com/">Saber Astronautics</a> and <a href="https://www.isae-supaero.fr/en/">ISAE-SUPAERO</a>.
 
                         Before that, I was a student researcher at the Sydney Institute for Astronomy (<a href="https://sifa.sydney.edu.au/">SIfA</a>) where I developed a data-driven classification pipeline for <a href="https://sifa.sydney.edu.au/asteroseismology/">asteroseismology</a>.
+                        </p>
                     </div>
                 </div>
 
@@ -278,11 +283,11 @@
                         <img src="imgs/yoularen.gif" class='img-fluid'>
                     </div>
                     <div class="col">
-                        <div class='paper-title'>
+                        <div class='paper-title' id="Youla-REN">
                             React to Surprises: Stable-by-Design Neural Feedback Control and the Youla-REN
                         </div>
                         <div class='paper-desc'>
-                            In preparation (2025).
+                            In preparation (2025)
                         </div>
                         <div class='paper-authors'>
                             <b>Nicholas H. Barbara</b>, Ruigang Wang, Alexandre Megretski, Ian R. Manchester
@@ -358,7 +363,7 @@
                             On Robust Reinforcement Learning with Lipschitz-Bounded Policy Networks
                         </div>
                         <div class='paper-desc'>
-                            Spotlight Talk at the Symposium on Systems Theory in Data and Optimization (SysDO 2024)
+                            Symposium on Systems Theory in Data and Optimization (SysDO 2024)
                         </div>
                         <div class='paper-authors'>
                             <b>Nicholas H. Barbara</b>, Ruigang Wang, Ian R. Manchester
@@ -443,7 +448,7 @@
                             Learning Over All Stabilizing Nonlinear Controllers for a Partially-Observed Linear System
                         </div>
                         <div class='paper-desc'>
-                            IEEE Control Systems Letters, Vol. 7 (2023)
+                            IEEE Control Systems Letters (2023)
                         </div>
                         <div class='paper-authors'>
                             Ruigang Wang, <b>Nicholas H. Barbara</b>, Max Revay, Ian R. Manchester
@@ -664,7 +669,7 @@
                 <!-- RobustNeuralNetworks (JAX) -->
                 <div class='row vspace-top'>
                     <div class="col-sm-3">
-                        <img src="imgs/Google_JAX_logo.png" class='img-fluid'>
+                        <img src="imgs/Google_JAX_logo.png" class='img-fluid fixed-height mx-auto d-block' style="height: 100px;">
                     </div>
                     <div class="col">
                         <div class='paper-title'>
@@ -694,7 +699,7 @@
                 <!-- RobustNeuralNetworks.jl -->
                 <div class='row vspace-top'>
                     <div class="col-sm-3">
-                        <img src="imgs/robustneuralnetworks-logo.png" width="200">
+                        <img src="imgs/robustneuralnetworks-logo.png" class='img-fluid fixed-height mx-auto d-block' style="height: 150px;">
                     </div>
                     <div class="col">
                         <div class='paper-title'>
@@ -763,6 +768,151 @@
                 <!-- Hardware -->
                 <div class='vspace-top'>
                     <h1 id="Projects">Miscellanious Projects</h1>
+                </div>
+
+                <!-- Blurb -->
+                <div class='row vspace-top-news'>
+                    <div class="col">
+                        My research often leads me towards more theoretical flavours of science and engineering. However, my interest in developing fundamental theory stems from a desire to enable greater autonomy in real-world systems. I therefore try to get hands-on with hardware whenenever I have the time. Below are a few interesting projects that I've worked on over the years.
+                    </div>
+                </div>
+
+                <!-- Qube Servo -->
+                <div class='row vspace-top'>
+                    <div class="col-sm-3">
+                        <img src="imgs/qube.gif" class='img-fluid fixed-height mx-auto d-block' style="height: 250px;">
+                    </div>
+                    <div class="col">
+                        <div class='paper-title'>
+                            Learning-Based Control with the Qube Servo
+                        </div>
+                        <div class='paper-desc'>
+                            January 2025
+                        </div>
+                        <!-- <br> -->
+                        <div >
+                            <p align="justify">
+                            I decided to implement some of the robust neural network architectures from our lab at ACFR on the <a href="https://www.quanser.com/products/qube-servo-2/">Qube Servo</a>. The GIF on the left shows the Qube being controlled by a <a href="#Youla-REN">Youla-REN</a> policy, which I trained using a custom deep RL pipeline based on the <a href="https://mujoco.readthedocs.io/en/stable/mjx.html">MJX</a> physics simulator.
+                            </p>
+                        </div>
+                        <br>
+                        <div >
+                            <p align="justify">
+                            Youla-REN policies augment an existing stabilising controller with a recurrent equilibrium network (<a href="https://ieeexplore.ieee.org/abstract/document/10179161">REN</a>) to improve performance while preserving stability. I started by designing a classical swing-up controller, combining an energy-pumping controller with an LQR, and added an extended Kalman filter for state estimation. 
+                            
+                            Putting it all together with RENs, deep RL, and <a href="https://ieeexplore.ieee.org/abstract/document/8202133?signout=success">domain randomisation</a> results in the swing-up policy in the GIF.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cassie -->
+                <div class='row vspace-top'>
+                    <div class="col-sm-3">
+                        <img src="imgs/cassie.gif" class='img-fluid fixed-height mx-auto d-block' style="height: 320px;">
+                    </div>
+                    <div class="col">
+                        <div class='paper-title'>
+                            Robotic Control with Cassie
+                        </div>
+                        <div class='paper-desc'>
+                            Mar 2021 - Dec 2024
+                        </div>
+                        <div >
+                            <p align="justify">
+                            It's not every day that one has a bipedal robot on hand for a passion project. Luckily, we have a <a href="https://github.com/agilityrobotics/cassie-doc/wiki">Cassie robot</a> at the ACFR which a number of our PhD student and postdocs use for their research in in motion planning and control.
+                            </p>
+                        </div>
+                        <br>
+                        <div >
+                            <p align="justify">
+                            I joined the Cassie team at the start of my PhD to assist with designing, testing, and implementing locomotion and balancing policies.
+
+                            Along the way, I learned a considerable amount about interfacing, robotic software engineering (<a href="https://www.ros.org/">ROS</a>), and state estimation with discrete contact events. Most importantly, I had the opportunity to get hands-on with a range of interesting control architectures based on inverse kinematics and <a href="https://andreadelprete.github.io/teaching/2019_PhD_obrc/3_task_space_control.pdf">task-space inverse dynamics</a> control.
+                            </p>
+                        </div>
+                        <br>
+                        <div >
+                            <p align="justify">
+                            I also got to embark on a very unnecessary but entirely enjoyable side-project to control Cassie directly from <a href="https://julialang.org/">Julia</a> via its native <a href="https://docs.julialang.org/en/v1/manual/embedding/">C/C++ interface</a>. Very unnecessary... but a great deep-dive into low-level interfacing between programming languages, and it worked! (GIF on the left.)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nearmap -->
+                <div class='row vspace-top'>
+                    <div class="col-sm-3">
+                        <img src="imgs/piezo_beam.jpeg" class='img-fluid'>
+                    </div>
+                    <div class="col">
+                        <div class='paper-title'>
+                            Piezoelectric Vibration Control
+                        </div>
+                        <div class='paper-desc'>
+                            Jul 2020 - Jan 2021
+                        </div>
+                        <div >
+                            <p align="justify">
+                            During my Bachelor's thesis, I had the opportunity to design and build a vibration control test-bed for <a href="https://www.nearmap.com/au?utm_source=google&utm_medium=organic">Nearmap</a>, an aerial imaging company based in Sydney. 
+
+                            Over the course of six months, I: 1) built a piezoelectric cantilever beam system; 2) modelled the system analytically, with FEA, and via system identification; 3) designed active damping controllers with positive position feedback and LQG control; and 4) implemented the controllers in real-time on an <a href="https://www.st.com/en/microcontrollers-microprocessors/stm32-32-bit-arm-cortex-mcus.html">STM32</a> microcontroller.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CROSS -->
+                <div class='row vspace-top'>
+                    <div class="col-sm-3">
+                        <img src="imgs/cross.png" class='img-fluid'>
+                    </div>
+                    <div class="col">
+                        <div class='paper-title'>
+                            A COTS Star Tracker for CubeSats
+                        </div>
+                        <div class='paper-desc'>
+                            Mar 2018 - Jul 2019
+                        </div>
+                        <div >
+                            <p align="justify">
+                            One of my earliest research positions was as part of a team of students working to a develop a commercial off-the-shelf (COTS) star tracker for attitude determination on small satellites. At the time, there were very few commercial star trackers that were small yet accurate enough for CubeSats. Our goal was to develop our own, in-house instrument for deployment on University of Sydney satellites.
+                            </p>
+                        </div>
+                        <br>
+                        <div >
+                            <p align="justify">
+                            I worked on preliminary designs of the <a href="https://cross-space.com.au/">CROSS</a> star tracker. CROSS has since been flown to space and deployed on board the <a href="https://www.cuava.com.au/delivery-of-cross-payload-for-cuava-2/">CUAVA-2</a> satellite.
+                            </p>
+                    </div>
+                </div>
+
+                <!-- Rocketry -->
+                <div class='row vspace-top'>
+                    <div class="col-sm-3">
+                        <img src="imgs/silvereye.jpg" class='img-fluid'>
+                    </div>
+                    <div class="col">
+                        <div class='paper-title'>
+                            USYD Rocketry Team
+                        </div>
+                        <div class='paper-desc'>
+                            Jul 2018 - Jun 2020
+                        </div>
+                        <div >
+                            <p align="justify">
+                            I was the lead Flight Analysis engineer for <a href="https://rocketry-eng.sydney.edu.au/">USYD Rocketry Team</a>’s competition-winning rockets Silvereye and Firetail. My role was to process flight data, predict our rockets' trajectories and peak altitudes, and use that information to inform design decisions. 
+                            
+                            I also helped to build the rockets, and was a mentor to a group of more junior students in the Flight Analysis team.
+                            </p>
+                        </div>
+                        <br>
+                        <div >
+                            <p align="justify">
+                            Silvereye placed 1st in the 10,000 ft COTS category at the 2019 Spaceport America Cup. Firetail placed 1st in the 30,000 ft COTS category at the 2020 Australian Universities Rocketry Competition.
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
