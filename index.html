@@ -123,6 +123,25 @@
           .paper-desc {
             font-style: italic;
           }
+          /* Navbar Styling */
+          .navbar {
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100%; /* Ensures it spans the full width */
+              z-index: 1000; /* Keeps it on top of other elements */
+              color: white;
+          }
+          .navbar-item {
+              text-decoration: none; /* Remove underline */
+              padding: 10px 20px;
+          }
+          .navbar-item:hover {
+              background-color: #444;
+          }
+          body {
+              padding-top: 60px; /* Adjust based on the navbar height */
+          }
     </style>
 </head>
 
@@ -130,12 +149,12 @@
 
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <!-- Navbar content (if needed) -->
         </div>
         <div class="navbar-menu">
             <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
                 <a class="navbar-item" href="#">Home</a>
-                <!-- <a class="navbar-item" href="#">Research</a> -->
+                <a class="navbar-item" href="#Research">Research</a>
+                <a class="navbar-item" href="#Projects">Projects</a>
             </div>
         </div>
     </nav> 
@@ -162,7 +181,7 @@
                   <br>
                   <div>
                     <p align="justify" style="color:white">
-                        Engineer and researcher with a passion for solving challenging problems and making complex systems come to life. I’m currently completing my PhD at the Australian Centre for Robotics (ACFR), where my research involves developing new robust machine learning tools for application in learning-based robotic control. 
+                        Engineer and researcher with a passion for solving challenging problems and making complex systems come to life. I’m currently completing my PhD at the Australian Centre for Robotics (ACFR), where my research involves developing new robust machine learning tools for applications in learning-based robotic control. 
                     </p>
                     <br>
                     <p align="justify" style="color:white">
@@ -217,7 +236,7 @@
             <div class='col offset-sm-1'>
 
                 <div class='vspace-top'>
-                    <h1>Background</h1>
+                    <h1 id="Background">Background</h1>
                 </div>
 
                 <div class='row vspace-top-news'>
@@ -225,7 +244,7 @@
 
                         I received a Bachelor of Engineering (Hons 1, University Medal) & Bachelor of Science (Advanced) from the University of Sydney in 2021. My majors were in Space Engineering, Physics, and Mathematics.
 
-                        I completed my honours thesis in vibration control as a visiting researcher at <a href="https://www.nearmap.com/au?utm_source=google&utm_medium=organic">Nearmap</a>, and had previously interned at <a href="https://www.saberastro.com/">Saber Astronautics</a> and <a href="https://www.isae-supaero.fr/en/">ISAE-SUPAERO</a>.
+                        I completed my honours thesis in vibration control as a visiting research student at <a href="https://www.nearmap.com/au?utm_source=google&utm_medium=organic">Nearmap</a>, and had previously interned at <a href="https://www.saberastro.com/">Saber Astronautics</a> and <a href="https://www.isae-supaero.fr/en/">ISAE-SUPAERO</a>.
 
                         Before that, I was a student researcher at the Sydney Institute for Astronomy (<a href="https://sifa.sydney.edu.au/">SIfA</a>) where I developed a data-driven classification pipeline for <a href="https://sifa.sydney.edu.au/asteroseismology/">asteroseismology</a>.
                     </div>
@@ -246,7 +265,7 @@
 
                 <!-- RESEARCH PORTFOLIO -->
                 <div class='vspace-top'>
-                    <h1>Research Portfolio</h1>
+                    <h1 id="Research">Research Portfolio</h1>
                 </div>
 
                 <!-- Robust Machine Learning -->
@@ -308,15 +327,15 @@
                         </div>
                         <br>
                         <div>
-                            <!-- <span class="link-block">
-                                <a href=""
+                            <span class="link-block">
+                                <a href="https://arxiv.org/abs/2504.01250"
                                 class="external-link button is-normal">
                                 <span class="icon">
                                     <i class="ai ai-arxiv"></i>
                                 </span>
                                 <span>arXiv</span>
                                 </a>
-                            </span> -->
+                            </span>
                             <span class="link-block">
                                 <a href="https://github.com/nic-barbara/R2DN"
                                 class="external-link button is-normal">
@@ -739,6 +758,11 @@
                             </span>
                         </div>
                     </div>
+                </div>
+
+                <!-- Hardware -->
+                <div class='vspace-top'>
+                    <h1 id="Projects">Miscellanious Projects</h1>
                 </div>
 
             </div>
